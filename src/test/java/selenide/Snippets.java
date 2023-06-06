@@ -69,7 +69,7 @@ public class Snippets {
         $("").ancestor("div"); // the same as closest
         $("div:last-child");
 
-        $("div").$("h1").find(byText("abc")).click();
+        $("div").$("h1").$(byText("abc")).click();
         // very optional
         $(byAttribute("abc", "x")).click();
         $("[abc=x]").click();
