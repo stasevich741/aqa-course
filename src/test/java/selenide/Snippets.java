@@ -127,8 +127,8 @@ public class Snippets {
     }
 
     void conditions_examples() {
-        $("").shouldBe(visible);
-        $("").shouldBe(hidden);
+        $("").shouldBe(Condition.visible);
+        $("").shouldBe(Condition.hidden);
 
         $("").shouldHave(text("abc"));
         $("").shouldHave(exactText("abc"));
@@ -198,7 +198,8 @@ public class Snippets {
     void file_operation_examples() throws FileNotFoundException {
 
         File file1 = $("a.fileLink").download(); // only for <a href=".."> links
-        File file2 = $("div").download(DownloadOptions.using(FileDownloadMode.FOLDER)); // more common options, but may have problems with Grid/Selenoid
+        // more common options, but may have problems with Grid/Selenoid
+        File file2 = $("div").download(DownloadOptions.using(FileDownloadMode.FOLDER));
 
         File file = new File("src/test/resources/readme.txt");
         $("#file-upload").uploadFile(file);
