@@ -9,10 +9,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
-    public String
-            userName = "Egor",
-            userLastName = "Egorov",
-            userEmail = "Egor@mail.ru";
+
     private String titleText = "Student Registration Form";
     public SelenideElement labelMaleGender = $x("//label[@for='gender-radio-1']");
 
@@ -33,38 +30,45 @@ public class RegistrationPage {
         Configuration.holdBrowserOpen = true;
     }
 
-    public void openPage() {
+    public RegistrationPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text(titleText));
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
+        return this;
     }
 
-    public void setFullNameAndEmail(String userName, String userLastName, String userEmail) {
+    public RegistrationPage setFullNameAndEmail(String userName, String userLastName, String userEmail) {
         setFirstName(userName);
         setLastName(userLastName);
         setEmail(userEmail);
+        return this;
     }
 
 
-    public void setFirstName(String userName) {
+    public RegistrationPage setFirstName(String userName) {
         firstNameInput.setValue(userName);
+        return this;
     }
 
-    public void setLastName(String userLastName) {
+    public RegistrationPage setLastName(String userLastName) {
         lastNameInput.setValue(userLastName);
+        return this;
     }
 
-    public void setEmail(String userEmail) {
+    public RegistrationPage setEmail(String userEmail) {
         emailInput.setValue(userEmail);
+        return this;
     }
 
-    public void setGender(String gender) {
+    public RegistrationPage setGender(String gender) {
         genderInput.$(byText(gender)).click();
+        return this;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public RegistrationPage setPhoneNumber(String phoneNumber) {
         phoneNumberInput.$(byText(phoneNumber)).click();
+        return this;
     }
 
 
