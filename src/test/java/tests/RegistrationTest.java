@@ -18,11 +18,11 @@ public class RegistrationTest {
     @Test
     void successFullRegistrationTest() {
         registrationPage.openPage().
-                setFullNameAndEmail(userName, userLastName, userEmail).
-//        setEmail(userEmail).
-//                setFirstName(userName).
-//                setLastName(userLastName).
-        setGender("Other").
+//                setFullNameAndEmail(userName, userLastName, userEmail).
+        setEmail(userEmail).
+                setFirstName(userName).
+                setLastName(userLastName).
+                setGender("Other").
                 setPhoneNumber("1234567890");
 
         $("#dateOfBirthInput").click();
