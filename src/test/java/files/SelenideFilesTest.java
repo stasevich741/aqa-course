@@ -1,6 +1,5 @@
 package files;
 
-import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -9,15 +8,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class SelenideFilesTest {
-    public SelenideElement inputFile = $("input[qq-button-id='a76480db-11c2-4f48-91bf-a0539376ce20']");
-
-    public SelenideElement inputFile2 = $x("//input[contains(@qq-button-id, 'db')]");
-
-
     @Test
     void selenideDownloadTest() throws IOException {
         open("https://github.com/assertj/assertj/blob/main/README.md");
